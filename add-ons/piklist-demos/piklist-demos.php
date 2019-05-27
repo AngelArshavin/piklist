@@ -530,5 +530,6 @@ Domain Path: /languages
 
   function piklist_demo_part_add_meta_boxes_callback($post, $arguments)
   {
+    piklist::pre('$arguments:');
     piklist::pre($arguments);
   }
