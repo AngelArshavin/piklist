@@ -1210,10 +1210,10 @@ class Piklist_CPT
   {
     global $pagenow;
 
-        if (in_array($pagenow, array('edit.php', 'upload.php')))
+		if (in_array($pagenow, array('edit.php', 'upload.php')))
     {
       $object_type = isset($_REQUEST['post_type']) ? esc_attr($_REQUEST['post_type']) : 'post';
-            $object_type = $pagenow == 'upload.php' ? 'attachment' : $object_type;
+			$object_type = $pagenow == 'upload.php' ? 'attachment' : $object_type;
 
       $taxonomies = get_object_taxonomies($object_type);
 
@@ -1223,9 +1223,9 @@ class Piklist_CPT
         {
           if (isset($taxonomy['configuration']['list_table_filter']) && $taxonomy['configuration']['list_table_filter'] == '1')
           {
-                        piklist::render('shared/list-table-filter-taxonomies', array(
-                      'taxonomy_name' => $taxonomy['name']
-                  ));
+						piklist::render('shared/list-table-filter-taxonomies', array(
+			      	'taxonomy_name' => $taxonomy['name']
+			      ));
           }
         }
       }
@@ -1302,7 +1302,7 @@ class Piklist_CPT
 
       foreach ($fields['post_meta'] as $post_meta => $field)
       {
-          $meta_key = $field['field'];
+      	$meta_key = $field['field'];
 
         if (!strstr($meta_key, ':') && !$field['display'] && $field['type'] != 'group')
         {
